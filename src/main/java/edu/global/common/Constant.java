@@ -16,4 +16,10 @@ public class Constant {
             "       GRADE\n" +
             "FROM TBL_CLASS_202201 C, TBL_MEMBER_202201 M, TBL_TEACHER_202201 T\n" +
             "WHERE C.C_NO = M.C_NO AND C.TEACHER_CODE = T.TEACHER_CODE";
+    public static final String QUERY_TEACHER_SALE_LIST = "SELECT T.TEACHER_CODE, CLASS_NAME, TEACHER_NAME, TUITION\n" +
+            "FROM TBL_TEACHER_202201 T, (\n" +
+            "    SELECT TEACHER_CODE, SUM(TUITION) AS TUITION\n" +
+            "    FROM TBL_CLASS_202201\n" +
+            "    GROUP BY TEACHER_CODE) C\n" +
+            "WHERE T.TEACHER_CODE = C.TEACHER_CODE";
 }
