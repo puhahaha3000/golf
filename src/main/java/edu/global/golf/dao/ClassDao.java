@@ -20,19 +20,17 @@ public class ClassDao implements ConvertableFromResultSet<ClassDto> {
 
     @Override
     public ClassDto convertToOneRecord(ResultSet resultSet) {
-        ClassDto classDto = null;
+        ClassDto classDto;
         try {
-            if (resultSet.next()) {
-                classDto = new ClassDto(
-                        resultSet.getString("REGIST_MONTH"),
-                        resultSet.getString("C_NO"),
-                        resultSet.getString("C_NAME"),
-                        resultSet.getString("CLASS_NAME"),
-                        resultSet.getString("CLASS_AREA"),
-                        resultSet.getString("TUITION"),
-                        resultSet.getString("GRADE")
-                );
-            }
+            classDto = new ClassDto(
+                    resultSet.getString("REGIST_MONTH"),
+                    resultSet.getString("C_NO"),
+                    resultSet.getString("C_NAME"),
+                    resultSet.getString("CLASS_NAME"),
+                    resultSet.getString("CLASS_AREA"),
+                    resultSet.getString("TUITION"),
+                    resultSet.getString("GRADE")
+            );
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException(e);

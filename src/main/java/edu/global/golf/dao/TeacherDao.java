@@ -16,17 +16,15 @@ public class TeacherDao implements ConvertableFromResultSet<TeacherDto> {
 
     @Override
     public TeacherDto convertToOneRecord(ResultSet resultSet) {
-        TeacherDto teacherDto = null;
+        TeacherDto teacherDto;
         try {
-            if(resultSet.next()) {
-                teacherDto = new TeacherDto(
-                    resultSet.getString("TEACHER_CODE"),
-                    resultSet.getString("TEACHER_NAME"),
-                    resultSet.getString("CLASS_NAME"),
-                    resultSet.getInt("CLASS_PRICE"),
-                    resultSet.getString("TEACHER_REGIST_DATE")
-                );
-            }
+            teacherDto = new TeacherDto(
+                resultSet.getString("TEACHER_CODE"),
+                resultSet.getString("TEACHER_NAME"),
+                resultSet.getString("CLASS_NAME"),
+                resultSet.getInt("CLASS_PRICE"),
+                resultSet.getString("TEACHER_REGIST_DATE")
+            );
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
