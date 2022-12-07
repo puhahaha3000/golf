@@ -1,7 +1,8 @@
 package edu.global.golf.command;
 
 public enum CommandList {
-    TEACHER_LIST("/teacher_list.do", new TeacherListCommand(), "teacher_list.jsp");
+    TEACHER_LIST("/teacher_list.do", new TeacherListCommand(), "teacher_list.jsp"),
+    CLASS_INSERT("/class_insert.do", new ClassInsertCommand(), "class_insert_view.jsp");
 
     private final String com;
     private final Command command;
