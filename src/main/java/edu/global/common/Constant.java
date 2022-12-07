@@ -10,4 +10,10 @@ public class Constant {
             "FROM TBL_TEACHER_202201";
     public static final String QUERY_INSERT_CLASS = "INSERT INTO TBL_CLASS_202201\n" +
             "VALUES (?, ?, ?, ?, ?)";
+    public static final String QUERY_CLASS_LIST = "SELECT SUBSTR(REGIST_MONTH, 1, 4)||'년'||SUBSTR(REGIST_MONTH, 5, 2)||'월' AS REGIST_MONTH,\n" +
+            "       M.C_NO, C_NAME, CLASS_NAME, CLASS_AREA,\n" +
+            "       '\\'||TO_CHAR(TUITION, 'FM999,999,999') AS TUITION,\n" +
+            "       GRADE\n" +
+            "FROM TBL_CLASS_202201 C, TBL_MEMBER_202201 M, TBL_TEACHER_202201 T\n" +
+            "WHERE C.C_NO = M.C_NO AND C.TEACHER_CODE = T.TEACHER_CODE";
 }

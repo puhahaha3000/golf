@@ -3,27 +3,33 @@ package edu.global.golf.dto;
 public class ClassDto {
     private String registeredMonth;
     private String customerNo;
+    private String customerName;
+    private String className;
     private String classArea;
-    private int tuition;
-    private String teacherCode;
+    private String tuition;
+    private String grade;
 
     @Override
     public String toString() {
         return "ClassDto{" +
                 "registeredMonth='" + registeredMonth + '\'' +
                 ", customerNo='" + customerNo + '\'' +
+                ", customerName='" + customerName + '\'' +
+                ", className='" + className + '\'' +
                 ", classArea='" + classArea + '\'' +
-                ", tuition=" + tuition +
-                ", teacherCode='" + teacherCode + '\'' +
+                ", tuition='" + tuition + '\'' +
+                ", grade='" + grade + '\'' +
                 '}';
     }
 
-    public ClassDto(String registeredMonth, String customerNo, String classArea, int tuition, String teacherCode) {
+    public ClassDto(String registeredMonth, String customerNo, String customerName, String className, String classArea, String tuition, String grade) {
         this.registeredMonth = registeredMonth;
         this.customerNo = customerNo;
+        this.customerName = customerName;
+        this.className = className;
         this.classArea = classArea;
         this.tuition = tuition;
-        this.teacherCode = teacherCode;
+        this.grade = grade;
     }
 
     public String getRegisteredMonth() {
@@ -42,6 +48,22 @@ public class ClassDto {
         this.customerNo = customerNo;
     }
 
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
     public String getClassArea() {
         return classArea;
     }
@@ -50,19 +72,19 @@ public class ClassDto {
         this.classArea = classArea;
     }
 
-    public int getTuition() {
+    public String getTuition() {
         return tuition;
     }
 
-    public void setTuition(int tuition) {
+    public void setTuition(String tuition) {
         this.tuition = tuition;
     }
 
-    public String getTeacherCode() {
-        return teacherCode;
+    public String getGrade() {
+        return grade;
     }
 
-    public void setTeacherCode(String teacherCode) {
-        this.teacherCode = teacherCode;
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 }
