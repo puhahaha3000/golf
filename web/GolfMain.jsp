@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>메인페이지</title>
     <style type="text/css">
         a:link{
             color: white;
@@ -54,7 +54,7 @@
 <nav>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="teacher_list.do">강사조회</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="class_insert.do">수강신청</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="class_insert_view.do">수강신청</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="class_list.do">회원정보조회</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="teacher_sale_list.do">강사매출현황</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="GolfMain.jsp">홈으로</a>

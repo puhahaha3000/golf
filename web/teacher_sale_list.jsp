@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: KIMHYOJUN
@@ -96,7 +97,7 @@
 <nav>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="teacher_list.do">강사조회</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="class_insert.do">수강신청</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="class_insert_view.do">수강신청</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="class_list.do">회원정보조회</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="teacher_sale_list.do">강사매출현황</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="GolfMain.jsp">홈으로</a>
@@ -111,17 +112,14 @@
         <th>총매출</th>
         </thead>
         <tbody>
-        <td>100</td>
-        <td>초급반</td>
-        <td id="tname">박온리</td>
-        <td>개마니</td>
-        </tbody>
-        <tbody>
-        <td>100</td>
-        <td>초급반</td>
-        <td id="tname1">박온리</td>
-        <td>개마니</td>
-        </tbody>
+        <c:forEach var="dto" items="${list}">
+        <tr>
+            <td>${dto.teacherCode}</td>
+            <td>${dto.className}</td>
+            <td>${dto.teacherName}</td>
+            <td>${dto.tuition}</td>
+        </tr>
+        </c:forEach>
     </table>
 </section>
 <footer>HRDKOREA Copyright@2015 Allrights reserved.Human Resources Development Service od Korea</footer>

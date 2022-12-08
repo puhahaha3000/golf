@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: KIMHYOJUN
-  Date: 2022-12-08
-  Time: 오후 4:45
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>회원정보조회</title>
+    <title>강사조회</title>
     <style type="text/css">
         table {
             text-align: center;
@@ -91,45 +85,34 @@
 <nav>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="teacher_list.do">강사조회</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="class_insert.do">수강신청</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="class_insert_view.do">수강신청</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="class_list.do">회원정보조회</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="teacher_sale_list.do">강사매출현황</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="GolfMain.jsp">홈으로</a>
 </nav>
 <section>
-    <h3>회원정보조회</h3>
+    <h3>강사조회</h3>
     <table width="50%" height="50" border="solid black 1px">
         <thead>
-        <th>수강월</th>
-        <th>회원번호</th>
-        <th>회원명</th>
+        <th>강사코드</th>
+        <th>강사명</th>
         <th>강의명</th>
-        <th>강의장소</th>
         <th>수강료</th>
-        <th>등급</th>
+        <th>강사자격취득일</th>
         </thead>
         <tbody>
-        <td>2022년12월</td>
-        <td>10001</td>
-        <td>바공리</td>
-        <td>초급반</td>
-        <td>서울본원</td>
-        <td>비쌈</td>
-        <td>일반</td>
-        </tbody>
-        <tbody>
-        <td>2022년12월</td>
-        <td>10001</td>
-        <td>바공리</td>
-        <td>초급반</td>
-        <td>서울본원</td>
-        <td>비쌈</td>
-        <td>일반</td>
+        <c:forEach var="dto" items="${list}">
+            <tr>
+                <td>${dto.teacherCode}</td>
+                <td>${dto.teacherName}</td>
+                <td>${dto.className}</td>
+                <td>${dto.classPrice}</td>
+                <td>${dto.teacherRegisteredDate}</td>
+            </tr>
+        </c:forEach>
         </tbody>
     </table>
 </section>
 <footer>HRDKOREA Copyright@2015 Allrights reserved.Human Resources Development Service od Korea</footer>
-</body>
-</html>
 </body>
 </html>

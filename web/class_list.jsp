@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>회원정보조회</title>
     <style type="text/css">
         table {
             text-align: center;
@@ -85,34 +85,36 @@
 <nav>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="teacher_list.do">강사조회</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="class_insert.do">수강신청</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="class_insert_view.do">수강신청</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="class_list.do">회원정보조회</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="teacher_sale_list.do">강사매출현황</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="GolfMain.jsp">홈으로</a>
 </nav>
 <section>
-    <h3>강사조회</h3>
+    <h3>회원정보조회</h3>
     <table width="50%" height="50" border="solid black 1px">
         <thead>
-        <th>강사코드</th>
-        <th>강사명</th>
+        <th>수강월</th>
+        <th>회원번호</th>
+        <th>회원명</th>
         <th>강의명</th>
+        <th>강의장소</th>
         <th>수강료</th>
-        <th>강사자격취득일</th>
+        <th>등급</th>
         </thead>
         <tbody>
         <c:forEach var="dto" items="${list}">
             <tr>
-                <td>${dto.teacherCode}</td>
-                <td>${dto.teacherName}</td>
+                <td>${dto.registeredMonth}</td>
+                <td>${dto.customerNo}</td>
+                <td>${dto.customerName}</td>
                 <td>${dto.className}</td>
-                <td>${dto.classPrice}</td>
-                <td>${dto.teacherRegisteredDate}</td>
+                <td>${dto.classArea}</td>
+                <td>${dto.tuition}</td>
+                <td>${dto.grade}</td>
             </tr>
         </c:forEach>
-
         </tbody>
-
     </table>
 </section>
 <footer>HRDKOREA Copyright@2015 Allrights reserved.Human Resources Development Service od Korea</footer>
