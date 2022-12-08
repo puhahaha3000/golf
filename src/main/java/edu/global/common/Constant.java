@@ -22,4 +22,5 @@ public class Constant {
             "    FROM TBL_CLASS_202201\n" +
             "    GROUP BY TEACHER_CODE) C\n" +
             "WHERE T.TEACHER_CODE = C.TEACHER_CODE";
+    public static final String QUERY_MEMBER_LIST = "SELECT * FROM TBL_MEMBER_202201";
 }
